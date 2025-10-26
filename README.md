@@ -25,13 +25,130 @@
 
 ```
 HyTruong_TimeSeries_PredictExchangeRate/
-├── data/                 # Raw and processed datasets
-├── notebooks/            # Jupyter notebooks for experimentation
-├── models/               # Trained LSTM and BiLSTM models
-├── pipeline/             # Dagster and Spark pipeline scripts
-├── app/                  # Streamlit visualization app
-├── utils/                # Helper functions
-└── README.md             # Project documentation
+├── app.py
+├── crawler.py
+├── chromedriver-win64/
+│   ├── chromedriver.exe
+│   ├── LICENSE.chromedriver
+│   └── THIRD_PARTY_NOTICES.chromedriver
+│
+├── DPRE/
+│   ├── data_clean/
+│   │   ├── aud_rates.csv
+│   │   ├── euro_rates.csv
+│   │   ├── gbp_rates.csv
+│   │   ├── jpy_rates.csv
+│   │   └── usd_rates.csv
+│   ├── data_preprocessing.ipynb
+│   └── vietnam_exchange_rate.csv
+│
+├── minio/
+│   ├── aud/
+│   │   ├── aud_rates.snappy.parquet
+│   │   └── part-00000-37f4c5e9-b2d8-4358-9c7c-eb662730f257-c000.snappy.parquet
+│   ├── euro/
+│   │   ├── euro_rates.snappy.parquet
+│   │   └── part-00000-12bff8a7-5eca-45d1-9c4d-76bcbd3b8261-c000.snappy.parquet
+│   ├── gbp/
+│   │   ├── gbp_rates.snappy.parquet
+│   │   └── part-00000-dc91c846-03af-491a-992d-2b0e8b7175ea-c000.snappy.parquet
+│   ├── jpy/
+│   │   ├── jpy_rates.snappy.parquet
+│   │   └── part-00000-4990b459-45c5-4e82-92c2-59655a001a75-c000.snappy.parquet
+│   └── usd/
+│       ├── usd_rates.snappy.parquet
+│       └── part-00000-18b834c3-cd6d-42ae-82c3-638999ff6d84-c000.snappy.parquet
+│
+├── Model/
+│   ├── case_1/
+│   │   ├── BiLSTM/
+│   │   │   ├── model_ADAM/
+│   │   │   │   ├── predict.csv
+│   │   │   │   ├── save_model.hdf5
+│   │   │   │   └── scaler.save
+│   │   │   ├── model_RMSPROP/
+│   │   │   │   ├── predict.csv
+│   │   │   │   └── save_model.hdf5
+│   │   │   └── model_SGD/
+│   │   │       ├── predict.csv
+│   │   │       └── save_model.hdf5
+│   │   └── LSTM/
+│   │       ├── model_ADAM/
+│   │       │   ├── predict.csv
+│   │       │   └── save_model.hdf5
+│   │       ├── model_RMSPROP/
+│   │       │   ├── predict.csv
+│   │       │   └── save_model.hdf5
+│   │       └── model_SGD/
+│   │           ├── predict.csv
+│   │           └── save_model.hdf5
+│   │
+│   ├── case_2/
+│   │   ├── BiLSTM/
+│   │   │   ├── model_6040/
+│   │   │   │   ├── predict.csv
+│   │   │   │   └── save_model.hdf5
+│   │   │   ├── model_7030/
+│   │   │   │   ├── predict.csv
+│   │   │   │   └── save_model.hdf5
+│   │   │   ├── model_8020/
+│   │   │   │   ├── predict.csv
+│   │   │   │   └── save_model.hdf5
+│   │   │   └── model_9010/
+│   │   │       ├── predict.csv
+│   │   │       └── save_model.hdf5
+│   │   └── LSTM/
+│   │       ├── model_6040/
+│   │       │   ├── predict.csv
+│   │       │   └── save_model.hdf5
+│   │       ├── model_7030/
+│   │       │   ├── predict.csv
+│   │       │   └── save_model.hdf5
+│   │       ├── model_8020/
+│   │       │   ├── predict.csv
+│   │       │   └── save_model.hdf5
+│   │       └── model_9010/
+│   │           ├── predict.csv
+│   │           └── save_model.hdf5
+│   │
+│   └── case_3/
+│       ├── BiLSTM/
+│       │   ├── model_7in1out/
+│       │   │   ├── predict.csv
+│       │   │   └── save_model.hdf5
+│       │   └── model_14in2out/
+│       │       ├── predict.csv
+│       │       └── save_model.hdf5
+│       └── LSTM/
+│           ├── model_7in1out/
+│           │   ├── predict.csv
+│           │   └── save_model.hdf5
+│           └── model_14in2out/
+│               ├── predict.csv
+│               └── save_model.hdf5
+│
+├── __pycache__/
+│   └── crawler.cpython-39.pyc
+│
+├── Case1_BiLSTM_ADAM.ipynb
+├── Case1_BiLSTM_RMSPROP.ipynb
+├── Case1_BiLSTM_SGD.ipynb
+├── Case1_LSTM_ADAM.ipynb
+├── Case1_LSTM_RMSPROP.ipynb
+├── Case1_LSTM_SGD.ipynb
+├── Case2_BiLSTM_6040.ipynb
+├── Case2_BiLSTM_7030.ipynb
+├── Case2_BiLSTM_8020.ipynb
+├── Case2_BiLSTM_9010.ipynb
+├── Case2_LSTM_6040.ipynb
+├── Case2_LSTM_7030.ipynb
+├── Case2_LSTM_8020.ipynb
+├── Case2_LSTM_9010.ipynb
+├── Case3_BiLSTM_7in1out.ipynb
+├── Case3_BiLSTM_14in2out.ipynb
+├── Case3_LSTM_7in1out.ipynb
+└── Case3_LSTM_14in2out.ipynb
+
 ```
 
 ## 📈 Results
